@@ -1,0 +1,13 @@
+version: "3.5"
+  
+services:
+  app:
+    container_name: "document_ai"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./api/:/app/api
+    ports:
+      - 93:93
+    command: sh ./docker-start.sh
